@@ -1,18 +1,19 @@
 function solution(a, b) {
-  var answer = 0;
+    var answer = 0;
 
-  if (a == b) return a;
-  else if (a > b) {
-    let temp = a;
-    a = b;
-    b = temp;
-  }
+    // a < b로 맞추기
+    if (a == b) return a;
+    else if (a > b) {
+        let temp = a;
+        a = b;
+        b = temp;
+    }
 
-  for (a; a <= b; a++) {
-    answer += a;
-  }
+    for (a; a <= b; a++) {
+        answer += a;
+    }
 
-  return answer;
+    return answer;
 }
 
 console.log(solution(3, 5));
