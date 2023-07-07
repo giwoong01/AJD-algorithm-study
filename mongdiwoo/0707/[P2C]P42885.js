@@ -5,28 +5,13 @@ function solution(people, limit) {
     people.sort((a, b) => a - b);
 
     while (people.length > 0) {
-        // 맨 앞 사람과 맨 뒷사람이 limit 기준을 충족하여 둘 다 탈출할 때
         if (people[0] + people[people.length - 1] <= limit) {
-            people.pop();
             people.shift();
-
-            answer++;
         }
-        // 한 명만 남았을 때 바로 탈출
-        else if (people.length == 1) {
-            people.pop();
+        people.pop();
 
-            answer++;
-        }
-        // limit을 넘으면 맨 뒷사람만 탈출
-        else {
-            people.pop();
-
-            answer++;
-        }
+        answer++;
     }
-
-    console.log(people);
 
     return answer;
 }
